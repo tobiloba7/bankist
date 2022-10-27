@@ -1,6 +1,5 @@
 'use strict';
 
-///////////////////////////////////////
 const nav = document.querySelector('.nav');
 
 const modal = document.querySelector('.modal');
@@ -17,7 +16,7 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContent = document.querySelectorAll('.operations__content');
-///////////////////////////////////////
+
 // FUNCTIONS
 // Modal Window
 const openModal = function () {
@@ -316,111 +315,3 @@ history.scrollRestoration = 'manual';
 window.addEventListener('beforeunload', function () {
   window.scrollTo(0);
 });
-
-// EXPERIMENTAL DOM TRAVERSING
-// GOING DOWNWARDS; SELECTING DIRECT CHILD ELEMENTS
-// const h1 = document.querySelector('h1');
-
-// console.log(h1.querySelectorAll('.highlight'));
-// console.log(h1.childNodes); //returns all of the direct nodes under
-// console.log(h1.children); // returns an html collection of the active children elements under
-// h1.firstElementChild.style.color = 'pink';
-// h1.lastElementChild.style.color = 'purple';
-
-// GOING UPWARDS; SELECTING PARENT  ELEMENTS
-// console.log(h1.parentNode);
-// h1.closest('.header').style.background = 'var(--gradient-secondary)';
-
-// GOING SIDWAYS; SELECTING SIBLING ELEMENTS
-// console.log(h1.previousElementSibling);
-// console.log(h1.nextElementSibling);
-
-// console.log(h1.parentElement.children); //to view all of the siblings(children) nodes
-// [...h1.parentElement.children].forEach(function (el) {
-//   if (el !== h1) {
-//     el.style.transform = 'scale(0.7)';
-//   }
-// }); //selecting elements sibling elements and adding features by accessing all the siblings
-// EXPERIMENTAL; NAVBAR FEATURE
-// const randomColor = () =>
-//   `rgb(${randomInt(0, 225)},${randomInt(0, 225)},${randomInt(0, 225)})`;
-
-// console.log(randomColor());
-
-// document.querySelector('.nav__link').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('LINK', e.target, e.currentTarget);
-// });
-
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('CONTAINER', e.target, e.currentTarget);
-// });
-
-// document.querySelector('.nav').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('NAVBAR', e.target, e.currentTarget);
-// });
-
-// LECTURES
-// DOCUMENT METHODS
-// console.log(document.documentElement); //selecting the whole elements of the page
-// console.log(document.head);
-// console.log(document.body);
-
-// console.log(document.querySelectorAll('.section')); //returns an array like node list; cannot be change d in real time
-
-// const allButtons = document.getElementsByTagName('button');
-// console.log(allButtons); //this method returns an html collection; which is a live collection that changes in real time as the dom changes
-
-// const allBtnsClass = document.getElementsByClassName('btn');
-// console.log(allBtnsClass); //returns and html collection
-
-// CREATING AND INSERTING ELEMENTS
-// insertAdjacentHTML
-
-// const message = document.createElement('div'); //creating a dive manually
-// message.classList.add('cookie-message');
-// message.innerHTML =
-//   'we use cookies to stress you tf out  <button class="btn btn--close-cookie">Got it!</button>';
-
-// header.prepend(message);
-// header.before(message);
-// header.append(message.cloneNode(true)); //to display an element multiple tiems, CLONING
-
-// DELETE ELEMENTS
-// STYLES
-// message.style.backgroundColor = '#37383d';
-// console.log(message.style.backgroundColor); //only styles that are set inline can be gotten by calling it externally
-
-// console.log(message.style.color); //returns nothing
-// console.log(getComputedStyle(message).color); //returns the predefined computed style
-// console.log(getComputedStyle(message).height);
-
-// message.style.height =
-//   Number.parseFloat(getComputedStyle(message).height, 2) + 90 + 'px';
-
-// // changing css default parameters; from root because 'root is equivalent to documentElement
-// document.documentElement.style.setProperty('--color-primary', 'orangered');
-
-// ATTRIBUTES; src, alt, class, id
-// const logo = document.querySelector('.nav__logo');
-// console.log(logo.alt);
-// console.log(logo.src); //delivers the absolute url
-// console.log(logo.getAttribute('src')); //delivers the relative url
-// console.log(logo.className);
-
-// logo.alt = 'beautiful minimalist design'; //alter the standardattributes
-
-// NON STANDARD
-// console.log(logo.designer); //non standard attributes cannot be gotten in the same way as standard ones
-// console.log(logo.getAttribute('designer'));
-
-// // DATA ATTRIBUTES; attrib
-// console.log(logo.dataset.versionNumber);
-
-// CLASSES
-// logo.classList.add('x', 'y');
-// logo.classList.remove('x', 'y');
-// logo.classList.toggle('x', 'y');
-// logo.classList.constains('x', 'y');
