@@ -105,29 +105,6 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ///////////////////////////////////////
 
-// NAVBAR STICKY ANIMATION
-// using the scroll event
-// const initialCoords = section1.getBoundingClientRect();
-
-// window.addEventListener('scroll', () => {
-//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// });
-
-// INTERSECTION OBSERVER API
-// const obsCallback = (entries, observer) => {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   });
-// };
-// const obsOptions = {
-//   root: null,
-//   // rootMargin: '600px',
-//   threshold: 0.3,
-// };
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
-
 const navHeight = nav.getBoundingClientRect().height;
 const hCallback = entries => {
   const [entry] = entries;
@@ -163,44 +140,6 @@ allSections.forEach((section, i) => {
   else section.classList.add('section--hidden2');
 });
 
-// const sCallback = function (entries, observer) {
-//   const [entry] = entries;
-
-//   if (!entry.isIntersecting) return;
-
-//   entry.target.classList.remove('section--hidden');
-//   observer.unobserve(entry.target);
-// };
-
-// const sectionObserver = new IntersectionObserver(sCallback, {
-//   root: null,
-//   threshold: 0.15,
-// });
-
-// allSections.forEach(function (section) {
-//   sectionObserver.observe(section);
-//   section.classList.add('section--hidden');
-// });
-// const allSections = document.querySelectorAll('.section');
-
-// const revealSection = function (entries, observer) {
-//   const [entry] = entries;
-
-//   if (!entry.isIntersecting) return;
-
-//   entry.target.classList.remove('section--hidden');
-//   observer.unobserve(entry.target);
-// };
-
-// const sectionObserver = new IntersectionObserver(revealSection, {
-//   root: null,
-//   threshold: 0.15,
-// });
-
-// allSections.forEach(function (section) {
-//   sectionObserver.observe(section);
-//   section.classList.add('section--hidden');
-// });
 
 // LAZY LOADING IMAGES
 
